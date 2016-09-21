@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	<div id="answer"></div>
+
+	<script>
+		// Prompt the user for a number. Print out all of the *even* numbers up to that number.
+		// If the user enters a negative number, print "Number must be positive".
+		// If the user enters something that is not a number, print "You must enter a number".
+		var answer = [];
+
+		// Hint: Use parseInt(theInput, 10) to retrieve the value of variable theInput as an integer
+		// Hint: Use isNaN(theInput) to determine if theInput is not a number (NaN)
+
+
+		var input = prompt("Give me a number and I'll give you all the even integers from zero up to it.")
+
+
+		while (isNaN(input) || input < 0) {
+			if (isNaN(input)) {
+				input = prompt("Please enter a number, not a word.");
+			} else if (input < 0) {
+				input = prompt("The number must be positive.");
+			} 
+		}
+
+		
+		input = parseFloat(parseInt(input, 10));
+
+
+		var i = 0;
+
+		while (i < input) {
+			if (i % 2 === 0) {
+				answer.push(" " + i);
+			}
+			i++;
+		}
+
+		
+		document.getElementById('answer').innerHTML = answer;
+
+
+		
+	</script>
+</body>
+</html>
+
